@@ -1,0 +1,15 @@
+{
+    "name": "app/auth-module",
+    "description": "Authentication module — registration, login, session management",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Modules\\Auth\\": "src/"
+        }
+    },
+    "require": {
+        "php": "^8.2",
+        "app/shared-kernel": "*"
+    },
+    "minimum-stability": "stable"
+}

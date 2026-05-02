@@ -1,0 +1,15 @@
+{
+    "name": "app/messaging-module",
+    "description": "Messaging module — conversations, messages, real-time broadcasting",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Modules\\Messaging\\": "src/"
+        }
+    },
+    "require": {
+        "php": "^8.2",
+        "app/shared-kernel": "*"
+    },
+    "minimum-stability": "stable"
+}

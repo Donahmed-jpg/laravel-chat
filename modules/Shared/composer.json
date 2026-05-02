@@ -1,0 +1,14 @@
+{
+    "name": "app/shared-kernel",
+    "description": "Shared contracts, DTOs, and value objects for the chat application",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "App\\Shared\\": "src/"
+        }
+    },
+    "require": {
+        "php": "^8.2"
+    },
+    "minimum-stability": "stable"
+}

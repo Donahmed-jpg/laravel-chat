@@ -1,0 +1,15 @@
+{
+    "name": "app/presence-module",
+    "description": "Presence module — online status, typing indicators",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Modules\\Presence\\": "src/"
+        }
+    },
+    "require": {
+        "php": "^8.2",
+        "app/shared-kernel": "*"
+    },
+    "minimum-stability": "stable"
+}
