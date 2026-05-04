@@ -10,13 +10,13 @@
     "license": "MIT",
     "require": {
         "php": "^8.3",
-        "laravel/framework": "^13.0",
-        "laravel/tinker": "^3.0",
-
-        "app/shared-kernel": "dev-main",
         "app/auth-module": "dev-main",
         "app/messaging-module": "dev-main",
-        "app/presence-module": "dev-main"
+        "app/presence-module": "dev-main",
+        "app/shared-kernel": "dev-main",
+        "inertiajs/inertia-laravel": "^3.0",
+        "laravel/framework": "^13.0",
+        "laravel/tinker": "^3.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",

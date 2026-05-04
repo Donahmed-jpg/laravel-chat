@@ -2,7 +2,7 @@
 
 namespace App\Shared\DTOs;
 
-use App\Shared\ValuedObjects\UserId;
+use App\Shared\ValueObjects\UserId;
 
 /**
  * Represents a user as seen by other modules.
