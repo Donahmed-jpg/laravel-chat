@@ -14,15 +14,11 @@ class AuthServiceProvider extends ServiceProvider
 {
     public function register(): void
     {
-        // Bind the internal repository contract
         $this->app->bind(
             UserRepositoryContract::class,
             EloquentUserRepository::class
         );
 
-        // Bind the Shared Kernel contract
-        // Other modules inject AuthContract — they get AuthService
-        // They never know EloquentUserRepository exists
         $this->app->bind(
             AuthContract::class,
             AuthService::class,
@@ -33,9 +29,7 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->loadRoutesFrom(__DIR__ . '/../../routes/web.php');
         $this->loadMigrationsFrom(__DIR__ . '/../../database/migrations');
-
-        // Tell Laravel's auth system to use OUR User model
-        // not the default App\Models\User
+        // set default User module 
         Config::set('auth.providers.users.model', User::class);
     }
 }

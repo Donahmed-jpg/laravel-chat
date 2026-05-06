@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Shared\Contracts\AuthContract;
 use Illuminate\Http\Request;
 use Inertia\Middleware;
 
@@ -35,9 +36,24 @@ class HandleInertiaRequests extends Middleware
      */
     public function share(Request $request): array
     {
-        return [
-            ...parent::share($request),
-            //
-        ];
+        // return [
+        //     ...parent::share($request),
+        //     //
+        // ];
+
+        return array_merge((parent::share($request)), [
+            'auth' => [
+
+                'user' => $request->user()
+                        ? app(AuthContract::class)->currentUser()?->toArray()
+                        : null,
+            ],
+
+            // Flash messages from redirects
+            'flash' => [
+                'success' => session('success'),
+                'error'   => session('error')
+            ]
+        ]);
     }
 }
