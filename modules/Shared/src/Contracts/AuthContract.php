@@ -2,7 +2,7 @@
 
 namespace App\Shared\Contracts;
 
-use App\Shared\DTOs\UserDTO;
+use App\Shared\DTOs\UserResponse;
 use App\Shared\ValueObjects\UserId;
 
 /**
@@ -17,12 +17,12 @@ interface AuthContract
      * Find a user by their ID.
      * Returns a DTO (not an Eloquent model) intentionally.
      */
-    public function findUser(UserId $id): ?UserDTO;
+    public function findUser(UserId $id): ?UserResponse;
 
     /**
      * Get the currently authenticated user.
      */
-    public function currentUser(): ?UserDTO;
+    public function currentUser(): ?UserResponse;
 
     /**
      * Check if a user ID exists in the system.

@@ -2,9 +2,8 @@
 
 use App\Providers\AppServiceProvider;
 use App\Shared\Providers\SharedKernelServiceProvider;
-use Modules\Auth\Providers\AuthServiceProvider;
-use Modules\Messaging\Providers\MessagingServiceProvider;
-use Modules\Presence\Providers\PresenceServiceProvider;
+use Modules\Auth\Infrastructure\Providers\AuthServiceProvider;
+
 
 return [
     AppServiceProvider::class,
@@ -14,6 +13,4 @@ return [
 
     // Module Service Providers
     AuthServiceProvider::class,
-    MessagingServiceProvider::class,
-    PresenceServiceProvider::class
 ];

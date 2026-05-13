@@ -51,7 +51,7 @@ const pages = import.meta.glob([
     // Primary: scan every module's Pages directory recursively
     // Matches: modules/Auth/resources/js/Pages/Login.jsx
     // Matches: modules/Messaging/resources/js/Pages/Chat/Index.jsx
-    '../../modules/*/resources/js/Pages/**/*.jsx',
+    '../../modules/*/src/Presentation/resources/js/Pages/**/*.jsx',
 
     // Fallback: global pages not belonging to any module
     // e.g. resources/js/Pages/Dashboard.jsx
@@ -90,7 +90,7 @@ function matchesPageName(filePath, name) {
     // e.g. modules/Auth/resources/js/Pages/Chat/Index.jsx
     //   → moduleName = 'Auth', pagePath = 'Chat/Index'
     const moduleMatch = filePath.match(
-        /modules\/(\w+)\/resources\/js\/Pages\/(.+)\.jsx$/
+        /modules\/(\w+)\/src\/Presentation\/resources\/js\/Pages\/(.+)\.jsx$/
     )
 
     if (moduleMatch) {

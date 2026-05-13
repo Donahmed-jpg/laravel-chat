@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Modules\Auth\Http\Controllers\AuthController;
+use Modules\Auth\Presentation\Controllers\AuthController;
 
 Route::middleware('web')->group(
     function () {
@@ -18,13 +18,24 @@ Route::middleware('web')->group(
 
                 Route::post('/login', [AuthController::class, 'login']);
 
+
+
             }
         );
 
+        Route::get('/', function (){
+            return redirect(route('chat.index'));
+        });
 
-            Route::middleware('auth')->group(function() {
-                Route::post('/logout', [AuthController::class, 'logout'])
-                ->name('logout');
-            });
+
+        Route::middleware('auth')->group(function() {
+
+            Route::post('/logout', [AuthController::class, 'logout'])
+            ->name('logout');
+
+            Route::get('/chat', function(){
+                return "logged in";
+            })->name('chat.index');
+        });
         }
 );
